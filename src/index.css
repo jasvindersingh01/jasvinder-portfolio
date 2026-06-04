@@ -157,52 +157,61 @@ body {
     0 0 20px var(--glow-purple),
     0 0 60px rgba(139, 92, 246, 0.15);
 }
-.meteor {
+
+
+.stars-layer {
   position: absolute;
-  width: 3px;
-  height: 3px;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
 
   border-radius: 999px;
 
   background: white;
 
+  opacity: 0.4;
+
   box-shadow:
-    0 0 10px white,
-    0 0 20px white;
+    0 0 4px rgba(255,255,255,.8),
+    0 0 8px rgba(255,255,255,.4);
 
-  animation: meteor 6s linear infinite;
+  animation:
+    twinkle linear infinite,
+    floatStar linear infinite;
 }
 
-.meteor::before {
-  content: "";
+@keyframes twinkle {
+  0%,100% {
+    opacity: .2;
+  }
 
-  position: absolute;
-
-  width: 120px;
-  height: 1px;
-
-  top: 50%;
-  right: 0;
-
-  transform: translateY(-50%);
-
-  background: linear-gradient(
-    to left,
-    rgba(255,255,255,.9),
-    transparent
-  );
-}
-
-@keyframes meteor {
-  from {
-    transform:
-      translate3d(0,0,0);
+  50% {
     opacity: 1;
+  }
+}
+
+@keyframes floatStar {
+  from {
+    transform: translateY(0);
   }
 
   to {
-    transform:
-      translate3d(-600px,400px,0);
-    opacity: 0;
+    transform: translateY(-120px);
   }
+}
+
+.star:nth-child(3n) {
+  box-shadow:
+    0 0 6px var(--accent-cyan),
+    0 0 12px var(--accent-cyan);
+}
+
+.star:nth-child(5n) {
+  box-shadow:
+    0 0 6px var(--accent-purple),
+    0 0 12px var(--accent-purple);
 }

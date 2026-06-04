@@ -14,11 +14,10 @@ import {
   SiJavascript,
 } from "react-icons/si";
 
-import { ArrowRight } from "lucide-react";
+import { MoveRight, FileText } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 
-import profile from "../../assets/profile/dp.jpg";
-import Meteors from "../effects/Meteors";
+import profile from "../../assets/profile/dp.png";
 
 const techStack = [
   {
@@ -57,20 +56,26 @@ const Hero = () => {
       {/* ===== Background Effects ===== */}
 
       {/* Glow Orbs */}
-      <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-cyan-500/20 blur-[140px]" />
+      <div className="absolute top-20 left-10 h-9
+      2 w-92 rounded-full bg-cyan-500/20 blur-[140px]" />
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-purple-600/20 blur-[160px]" />
 
-      {/* Galaxy Nebula Layer */}
-
-      <div className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-cyan-500/15 blur-[180px]" />
-
-      <div className="absolute top-1/3 -right-32 h-[500px] w-[500px] rounded-full bg-purple-500/15 blur-[180px]" />
-
-      <div className="absolute bottom-0 left-1/3 h-[450px] w-[450px] rounded-full bg-blue-500/10 blur-[160px]" />
-
-      {/* Stars */}
-
-    <Meteors />
+      <div className="stars-layer">
+        {[...Array(120)].map((_, i) => (
+          <span
+            key={i}
+            className="star"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${Math.random() * 3 + 1}px`,
+              height: `${Math.random() * 3 + 1}px`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${3 + Math.random() * 5}s`,
+            }}
+          />
+        ))}
+      </div>
 
 
       {/* Grid */}
@@ -91,7 +96,12 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-5 inline-flex rounded-full border border-cyan-400/20 bg-cyan-500/10 px-4 py-2 text-sm uppercase tracking-[0.3em] text-cyan-300 backdrop-blur-xl"
+            className="mb-5 inline-flex rounded-full border px-4 py-2 text-sm uppercase tracking-[0.3em] backdrop-blur-xl"
+            style={{
+              borderColor: "rgba(34,211,238,.2)",
+              background: "rgba(34,211,238,.08)",
+              color: "var(--accent-cyan)",
+            }}
           >
             Frontend & MERN Stack Developer
           </motion.p>
@@ -116,17 +126,20 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-6 text-2xl font-semibold text-slate-300 md:text-3xl"
+            className="mt-6 text-2xl font-semibold md:text-3xl"
+            style={{
+              color: "var(--text-secondary)",
+            }}
           >
             <TypeAnimation
               sequence={[
-                "React Developer",
+                "Frontend Developer",
                 2000,
                 "MERN Stack Developer",
                 2000,
-                "Frontend Specialist",
+                "Building Production Web Apps",
                 2000,
-                "UI/UX Focused Builder",
+                "Full Stack Developer",
                 2000,
               ]}
               speed={50}
@@ -141,10 +154,7 @@ const Hero = () => {
             transition={{ delay: 0.5 }}
             className="mt-8 max-w-2xl text-lg leading-relaxed text-slate-400"
           >
-            I build premium, high-performance web experiences using
-            React, Tailwind CSS, Node.js, and modern frontend
-            animations. Passionate about creating futuristic UI with
-            smooth interactions and scalable full-stack architecture.
+            Frontend Developer at RightAds Digital, building modern and responsive websites using React and modern web technologies. Beyond my professional work, I enjoy creating full-stack applications with the MERN stack and exploring new technologies like Next.js and TypeScript.
           </motion.p>
 
           {/* Buttons */}
@@ -154,16 +164,20 @@ const Hero = () => {
             transition={{ delay: 0.7 }}
             className="mt-10 flex flex-wrap gap-5"
           >
-            {/* Primary */}
+            {/* Primary */} 
             <a
               href="#projects"
               className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 px-7 py-4 text-sm font-semibold tracking-wide text-white shadow-[0_0_40px_rgba(59,130,246,0.45)]"
             >
               <span className="relative z-10 flex items-center gap-2">
-                View Projects
-                <ArrowRight
+                Explore Projects
+                <MoveRight
                   size={18}
-                  className="transition duration-300 group-hover:translate-x-1"
+                  className="
+  transition-all
+  duration-300
+  group-hover:translate-x-2
+  "
                 />
               </span>
 
@@ -171,13 +185,36 @@ const Hero = () => {
             </a>
 
             {/* Secondary */}
-            <a
-              href="/resume.pdf"
-              download
-              className="rounded-2xl border border-white/10 bg-white/5 px-7 py-4 text-sm font-semibold text-white backdrop-blur-xl transition duration-300 hover:border-cyan-400/30 hover:bg-cyan-500/10"
-            >
-              Download Resume
-            </a>
+        <a
+  href="/resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    group
+    rounded-2xl
+    border
+    border-white/10
+    bg-white/5
+    px-7
+    py-4
+    text-sm
+    font-semibold
+    text-white
+    backdrop-blur-xl
+    transition-all
+    duration-300
+    hover:bg-white/10
+  "
+>
+  <span className="flex items-center gap-2">
+    <FileText
+      size={18}
+      className="transition-transform duration-300 group-hover:scale-110"
+    />
+
+    View Resume
+  </span>
+</a>
           </motion.div>
 
           {/* Social Icons */}
@@ -211,36 +248,7 @@ const Hero = () => {
           </motion.div>
 
           {/* Tech Stack Pills */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
-            className="mt-12 flex flex-wrap gap-4"
-          >
-            {techStack.map((item, index) => (
-              <motion.div
-                key={index}
-                whileHover={{
-                  y: -6,
-                  scale: 1.05,
-                }}
-                className="group relative flex items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/5 px-5 py-3 backdrop-blur-xl"
-              >
-                {/* Glow */}
-                <div
-                  className={`absolute inset-0 opacity-0 blur-xl transition duration-300 group-hover:opacity-100 bg-gradient-to-r ${item.color}`}
-                />
 
-                <span className="relative z-10 text-xl">
-                  {item.icon}
-                </span>
-
-                <span className="relative z-10 text-sm font-medium text-slate-300">
-                  {item.name}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
 
         {/* ================= RIGHT ================= */}
@@ -255,65 +263,86 @@ const Hero = () => {
             duration: 1,
             ease: "easeOut",
           }}
-          className="relative flex justify-center"
+          className="relative flex items-center justify-center"
         >
-          {/* Glow Behind */}
-          <div className="absolute h-[450px] w-[450px] rounded-full bg-gradient-to-r from-cyan-500/30 to-purple-600/30 blur-[120px]" />
+          {/* Glow Layer */}
+          <div
+            className="absolute h-[520px] w-[520px] rounded-full blur-[140px] opacity-30"
+            style={{
+              background:
+                "radial-gradient(circle,var(--accent-cyan),transparent 70%)",
+            }}
+          />
 
-          {/* Rotating Border */}
+          {/* Ring 1 */}
           <motion.div
-            animate={{ rotate: 360 }}
+            animate={{
+              rotate: 360,
+            }}
             transition={{
               repeat: Infinity,
-              duration: 14,
+              duration: 40,
               ease: "linear",
             }}
-            className="absolute h-[420px] w-[420px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-[3px]"
-          >
-            <div className="h-full w-full rounded-full bg-[#050816]" />
-          </motion.div>
+            className="
+      absolute
+      h-[470px]
+      w-[470px]
+      rounded-full
+      border
+      border-white/10
+    "
+          />
 
-          {/* Image Card */}
+          {/* Ring 2 */}
           <motion.div
-            whileHover={{
-              y: -10,
-              rotate: 1,
+            animate={{
+              rotate: -360,
             }}
             transition={{
-              type: "spring",
-              stiffness: 120,
+              repeat: Infinity,
+              duration: 60,
+              ease: "linear",
             }}
-            className="relative overflow-hidden rounded-[40px] border border-white/10 bg-white/5 p-3 backdrop-blur-2xl"
-          >
-            {/* Shine */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent" />
+            className="
+      absolute
+      h-[550px]
+      w-[550px]
+      rounded-full
+      border
+      border-cyan-500/10
+    "
+          />
 
+          {/* Main Image */}
+          <motion.div
+            animate={{
+              y: [0, -12, 0],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 5,
+              ease: "easeInOut",
+            }}
+            className="relative z-20"
+          >
             <img
               src={profile}
               alt="Jasvinder Singh"
-              className="relative z-10 h-[520px] w-[380px] rounded-[30px] object-cover"
+              className="
+        h-[420px]
+        w-[420px]
+        rounded-full
+        object-cover
+        border
+        border-white/10
+      "
             />
-
-            {/* Bottom Glow */}
-            <div className="absolute bottom-0 left-1/2 h-32 w-52 -translate-x-1/2 rounded-full bg-cyan-500/30 blur-[70px]" />
           </motion.div>
 
-          {/* Floating Badge 1 */}
-          <motion.div
-            animate={{
-              y: [0, -10, 0],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 3,
-            }}
-            className="absolute top-10 -left-5 rounded-2xl border border-white/10 bg-white/10 px-5 py-3 backdrop-blur-xl"
-          >
-            <p className="text-sm font-medium text-white">
-              Full Stack MERN Engineer
-            </p>
-          </motion.div>
+
         </motion.div>
+
       </div>
 
       {/* Scroll Indicator */}
@@ -323,12 +352,24 @@ const Hero = () => {
         }}
         transition={{
           repeat: Infinity,
-          duration: 1.8,
+          duration: 2,
         }}
-        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 md:flex"
+        className="absolute bottom-10 left-1/2 hidden md:block"
       >
-        <div className="flex h-14 w-8 justify-center rounded-full border border-white/20">
-          <div className="mt-2 h-3 w-3 rounded-full bg-cyan-400" />
+        <div className="h-12 w-6 rounded-full border border-white/10 backdrop-blur-sm">
+          <div
+            className="
+      mx-auto
+      mt-2
+      h-2
+      w-2
+      rounded-full
+      bg-gradient-to-b
+      from-cyan-400
+      to-purple-500
+      shadow-[0_0_15px_rgba(34,211,238,.8)]
+      "
+          />
         </div>
       </motion.div>
     </section>
