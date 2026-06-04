@@ -24,14 +24,14 @@ const navLinks = [
     icon: User,
   },
   {
-    name: "Skills",
-    href: "#skills",
-    icon: Code2,
-  },
-  {
     name: "Projects",
     href: "#projects",
     icon: FolderKanban,
+  },
+  {
+    name: "Skills",
+    href: "#skills",
+    icon: Code2,
   },
   {
     name: "Experience",

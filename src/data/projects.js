@@ -32,30 +32,37 @@ export const projects = [
       {
         name: "React",
         icon: FaReact,
+        iconColor: "text-cyan-400",
       },
       {
         name: "Tailwind",
         icon: SiTailwindcss,
+        iconColor: "text-sky-400",
       },
       {
         name: "Node.js",
         icon: FaNodeJs,
+        iconColor: "text-green-500",
       },
       {
         name: "Express",
         icon: SiExpress,
+        iconColor: "text-gray-300",
       },
       {
         name: "MongoDB",
         icon: SiMongodb,
+        iconColor: "text-green-400",
       },
       {
         name: "JWT",
         icon: SiJsonwebtokens,
+        iconColor: "text-pink-500",
       },
       {
         name: "Razorpay",
         icon: SiRazorpay,
+        iconColor: "text-blue-500",
       },
     ],
 
@@ -89,22 +96,32 @@ export const projects = [
       {
         name: "React",
         icon: FaReact,
+        iconColor: "text-cyan-400",
       },
       {
         name: "Node.js",
         icon: FaNodeJs,
+        iconColor: "text-green-500",
+      },
+       {
+        name: "Express",
+        icon: SiExpress,
+        iconColor: "text-gray-300",
       },
       {
         name: "MongoDB",
         icon: SiMongodb,
+        iconColor: "text-green-400",
       },
       {
         name: "JWT",
         icon: SiJsonwebtokens,
+        iconColor: "text-pink-500",
       },
       {
         name: "Razorpay",
         icon: SiRazorpay,
+        iconColor: "text-blue-500",
       },
     ],
 
@@ -136,22 +153,27 @@ export const projects = [
       {
         name: "React",
         icon: FaReact,
+        iconColor: "text-cyan-400",
       },
       {
         name: "Node.js",
         icon: FaNodeJs,
+        iconColor: "text-green-500",
       },
       {
         name: "Express",
         icon: SiExpress,
+        iconColor: "text-gray-300",
       },
       {
         name: "MongoDB",
         icon: SiMongodb,
+        iconColor: "text-green-400",
       },
       {
         name: "JWT",
         icon: SiJsonwebtokens,
+        iconColor: "text-pink-500",
       },
     ],
 
