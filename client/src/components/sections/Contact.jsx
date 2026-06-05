@@ -5,6 +5,7 @@ import {
   FaGithub,
   FaLinkedin,
 } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 import {
   HiOutlineMail,
@@ -103,7 +104,7 @@ const Contact = () => {
 
       const data = await response.json();
 
-      alert(data.message);
+      toast.success("Message sent successfully 🚀");
 
       setFormData({
         name: "",
@@ -113,6 +114,7 @@ const Contact = () => {
       });
     } catch (error) {
       console.log(error);
+      toast.error("Failed to send message ❌");
     } finally {
       setLoading(false);
     }

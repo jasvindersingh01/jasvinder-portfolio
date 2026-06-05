@@ -33,34 +33,8 @@ export const sendContact = async (
         <p>${message}</p>
       `,
     });
-
+    
     // Auto Reply
-
-    await resend.emails.send({
-      from: "Jasvinder Singh <onboarding@resend.dev>",
-      to: email,
-
-      subject:
-        "Thank you for contacting me",
-
-      html: `
-        <h2>Hello ${name},</h2>
-
-        <p>
-          Thank you for reaching out.
-          I have received your message
-          and will get back to you soon.
-        </p>
-
-        <br/>
-
-        <p>
-          Regards,<br/>
-          Jasvinder Singh
-        </p>
-      `,
-    });
-
     res.status(200).json({
       success: true,
       message:

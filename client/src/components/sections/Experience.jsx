@@ -130,9 +130,9 @@ const Experience = () => {
               >
                 <CalendarDays size={18} />
 
-                <span className="text-sm text-slate-300">
-                  Present
-                </span>
+               <span className="text-sm text-slate-300">
+  Nov 2026 – Present · 6+ Months
+</span>
               </div>
             </div>
 
