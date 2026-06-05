@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
+import { useState } from "react";
 import {
   FaGithub,
   FaLinkedin,
@@ -66,6 +67,57 @@ const socialLinks = [
 ];
 
 const Contact = () => {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+
+      const response = await fetch(
+        "http://localhost:5000/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json();
+
+      alert(data.message);
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -180,7 +232,7 @@ const Contact = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
             className="
               relative overflow-hidden rounded-[32px] border border-white/10
               bg-white/[0.03] p-6 sm:p-8 backdrop-blur-xl
@@ -228,8 +280,11 @@ const Contact = () => {
                     </label>
                     <input
                       id="name"
+                      name="name"
                       type="text"
                       placeholder="Enter your name"
+                      value={formData.name}
+                      onChange={handleChange}
                       className="
                         w-full rounded-2xl border border-white/10 bg-white/5
                         px-5 py-4 text-white outline-none transition-all
@@ -245,8 +300,11 @@ const Contact = () => {
                     </label>
                     <input
                       id="email"
+                      name="email"
                       type="email"
                       placeholder="Enter your email"
+                      value={formData.email}
+                      onChange={handleChange}
                       className="
                         w-full rounded-2xl border border-white/10 bg-white/5
                         px-5 py-4 text-white outline-none transition-all
@@ -263,8 +321,11 @@ const Contact = () => {
                   </label>
                   <input
                     id="subject"
+                    name="subject"
                     type="text"
                     placeholder="Project inquiry / collaboration"
+                    value={formData.subject}
+                    onChange={handleChange}
                     className="
                       w-full rounded-2xl border border-white/10 bg-white/5
                       px-5 py-4 text-white outline-none transition-all
@@ -280,8 +341,11 @@ const Contact = () => {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows="6"
                     placeholder="Tell me about your project..."
+                    value={formData.message}
+                    onChange={handleChange}
                     className="
                       w-full resize-none rounded-2xl border border-white/10
                       bg-white/5 px-5 py-4 text-white outline-none transition-all
@@ -294,6 +358,7 @@ const Contact = () => {
                 <motion.div variants={itemVariants}>
                   <button
                     type="submit"
+                    disabled={loading}
                     className="
                       group flex w-full items-center justify-center gap-3
                       rounded-2xl px-6 py-4 font-semibold text-white
@@ -309,7 +374,7 @@ const Contact = () => {
                       size={18}
                       className="transition-transform duration-300 group-hover:translate-x-1"
                     />
-                    Send Message
+                    {loading ? "Sending..." : "Send Message"}
                   </button>
 
                   <p className="mt-4 text-center text-sm text-white/45">
