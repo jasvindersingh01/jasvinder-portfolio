@@ -28,6 +28,32 @@ app.use(
   contactRoutes
 );
 
+app.get("/test-mail", async (req, res) => {
+  try {
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: "Portfolio Test Email",
+      html: `
+        <h2>✅ Email Working Successfully</h2>
+        <p>Nodemailer is configured correctly.</p>
+      `,
+    });
+
+    res.status(200).json({
+      success: true,
+      message: "Test email sent successfully",
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
 app.listen(
   process.env.PORT || 5000,
   () => {
