@@ -1,4 +1,4 @@
-import transporter from "../config/mailer.js";
+import { resend } from "../config/resend.js";
 
 export const sendContact = async (
   req,
@@ -12,11 +12,11 @@ export const sendContact = async (
       message,
     } = req.body;
 
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+    // Mail to you
 
-      to: process.env.EMAIL_USER,
-
+    await resend.emails.send({
+      from: "Portfolio <onboarding@resend.dev>",
+      to: "jasvindersingh0901@gmail.com",
       subject: `Portfolio Contact - ${subject}`,
 
       html: `
@@ -36,9 +36,8 @@ export const sendContact = async (
 
     // Auto Reply
 
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-
+    await resend.emails.send({
+      from: "Jasvinder Singh <onboarding@resend.dev>",
       to: email,
 
       subject:
@@ -56,8 +55,7 @@ export const sendContact = async (
         <br/>
 
         <p>
-          Regards,
-          <br/>
+          Regards,<br/>
           Jasvinder Singh
         </p>
       `,
