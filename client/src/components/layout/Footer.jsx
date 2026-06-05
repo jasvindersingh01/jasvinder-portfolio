@@ -6,6 +6,8 @@ import {
 
 import {
   HiOutlineMail,
+  HiOutlinePhone,
+  HiOutlineLocationMarker,
 } from "react-icons/hi";
 
 import { ArrowUpRight } from "lucide-react";
@@ -33,23 +35,30 @@ const Footer = () => {
   const socials = [
     {
       icon: <FaGithub />,
-      href: "https://github.com/",
+      href: "https://github.com/YOUR_USERNAME",
       hover:
         "hover:text-white hover:shadow-[0_0_30px_rgba(255,255,255,0.35)]",
     },
 
     {
       icon: <FaLinkedin />,
-      href: "https://linkedin.com/",
+      href: "https://linkedin.com/in/YOUR_PROFILE",
       hover:
         "hover:text-[#0A66C2] hover:shadow-[0_0_30px_rgba(10,102,194,0.45)]",
     },
 
     {
       icon: <HiOutlineMail />,
-      href: "mailto:your@email.com",
+      href: "mailto:jasvindersingh0901@gmail.com",
       hover:
         "hover:text-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.45)]",
+    },
+
+    {
+      icon: <HiOutlinePhone />,
+      href: "tel:+919057238468",
+      hover:
+        "hover:text-green-400 hover:shadow-[0_0_30px_rgba(74,222,128,0.45)]",
     },
   ];
 
@@ -115,6 +124,62 @@ const Footer = () => {
             </a>
           ))}
         </div>
+        <div className="mt-10 flex flex-col items-center gap-4">
+          <a
+            href="mailto:jasvindersingh0901@gmail.com"
+            className="
+      group flex items-center gap-3
+      rounded-full border border-white/10
+      bg-white/5 px-5 py-3
+      text-slate-300 backdrop-blur-xl
+      transition-all duration-300
+      hover:border-cyan-400/30
+      hover:text-cyan-400
+      hover:shadow-[0_0_30px_rgba(34,211,238,0.25)]
+    "
+          >
+            <HiOutlineMail className="text-xl" />
+            <span>jasvindersingh0901@gmail.com</span>
+          </a>
+
+          <a
+            href="tel:+919057238468"
+            className="
+      group flex items-center gap-3
+      rounded-full border border-white/10
+      bg-white/5 px-5 py-3
+      text-slate-300 backdrop-blur-xl
+      transition-all duration-300
+      hover:border-green-400/30
+      hover:text-green-400
+      hover:shadow-[0_0_30px_rgba(74,222,128,0.25)]
+    "
+          >
+            <HiOutlinePhone className="text-xl" />
+            <span>+91 90572 38468</span>
+          </a>
+
+          <div
+            className="
+      flex items-center gap-3
+      rounded-full border border-white/10
+      bg-white/5 px-5 py-3
+      text-slate-300 backdrop-blur-xl
+      transition-all duration-300
+      hover:border-orange-400/30
+      hover:text-orange-400
+      hover:shadow-[0_0_30px_rgba(251,146,60,0.25)]
+    "
+          >
+            <HiOutlineLocationMarker className="text-xl" />
+            <span>Kota, Rajasthan, India</span>
+          </div>
+          <p className="mt-3 text-sm uppercase tracking-[0.3em] text-cyan-400">
+            Available For Freelance & Full Stack Opportunities
+          </p>
+        </div>
+
+
 
         {/* Nav Links */}
         <div className="mt-12 flex flex-wrap justify-center gap-8">

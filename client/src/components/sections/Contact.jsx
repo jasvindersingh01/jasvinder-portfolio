@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
+
+import {
+  HiOutlineMail,
+  HiOutlinePhone,
+} from "react-icons/hi";
 
 const containerVariants = {
   hidden: {},
@@ -26,13 +34,34 @@ const itemVariants = {
 const socialLinks = [
   {
     name: "GitHub",
-    href: "#",
+    href: "https://github.com/yourusername",
     icon: FaGithub,
+    hover:
+      "hover:text-white hover:border-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.25)]",
   },
+
   {
     name: "LinkedIn",
-    href: "#",
+    href: "https://linkedin.com/in/yourusername",
     icon: FaLinkedin,
+    hover:
+      "hover:text-[#0A66C2] hover:border-[#0A66C2]/20 hover:shadow-[0_0_30px_rgba(10,102,194,0.35)]",
+  },
+
+  {
+    name: "Email",
+    href: "mailto:yourmail@gmail.com",
+    icon: HiOutlineMail,
+    hover:
+      "hover:text-red-300 hover:border-cyan-400/20 hover:shadow-[0_0_30px_rgba(34,211,238,0.35)]",
+  },
+
+  {
+    name: "Call",
+    href: "tel:+919999999999",
+    icon: HiOutlinePhone,
+    hover:
+      "hover:text-green-400 hover:border-green-400/20 hover:shadow-[0_0_30px_rgba(74,222,128,0.35)]",
   },
 ];
 
@@ -108,15 +137,36 @@ const Contact = () => {
                       target="_blank"
                       rel="noreferrer"
                       aria-label={social.name}
-                      className="
-                        group flex h-14 w-14 items-center justify-center rounded-2xl
-                        border border-white/10 bg-white/5 text-xl text-white/90
-                        backdrop-blur-xl transition-all duration-300
-                        hover:-translate-y-1 hover:border-cyan-500/20
-                        hover:bg-white/10 hover:text-white
-                      "
+                      className={`
+    group
+    flex
+    h-14
+    w-14
+    items-center
+    justify-center
+    rounded-2xl
+    border
+    border-white/10
+    bg-white/5
+    text-xl
+    text-white/80
+    backdrop-blur-xl
+    transition-all
+    duration-300
+
+    hover:-translate-y-2
+    hover:bg-white/10
+
+    ${social.hover}
+  `}
                     >
-                      <Icon className="transition-transform duration-300 group-hover:scale-110" />
+                      <social.icon
+                        className="
+      transition-all
+      duration-300
+      group-hover:scale-125
+    "
+                      />
                     </a>
                   );
                 })}
