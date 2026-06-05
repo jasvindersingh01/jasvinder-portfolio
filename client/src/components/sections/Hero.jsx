@@ -225,7 +225,7 @@ const Hero = () => {
             className="mt-10 flex items-center gap-5"
           >
             <a
-              href="https://github.com/"
+              href="https://github.com/jasvindersingh01"
               target="_blank"
               rel="noreferrer"
               className="group relative flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-2xl text-white backdrop-blur-xl transition duration-300 hover:scale-110 hover:border-cyan-400/30"

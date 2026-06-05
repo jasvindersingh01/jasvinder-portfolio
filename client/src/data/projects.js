@@ -25,8 +25,8 @@ export const projects = [
 
     image: "/projects/zenvyra.png",
 
-    live: "#",
-    github: "#",
+    live: "https://zenvyra-shop.vercel.app/",
+    github: "https://github.com/jasvindersingh01/zenvyra-ecommerce",
 
     tech: [
       {
@@ -89,8 +89,8 @@ export const projects = [
 
     image: "/projects/pixora.png",
 
-    live: "#",
-    github: "#",
+    live: "https://pixora-app.vercel.app/",
+    github: "https://github.com/jasvindersingh01/pixora",
 
     tech: [
       {
@@ -103,7 +103,7 @@ export const projects = [
         icon: FaNodeJs,
         iconColor: "text-green-500",
       },
-       {
+      {
         name: "Express",
         icon: SiExpress,
         iconColor: "text-gray-300",
@@ -146,8 +146,8 @@ export const projects = [
 
     image: "/projects/voltify.png",
 
-    live: "#",
-    github: "#",
+    live: "https://voltify-ev.vercel.app/",
+    github: "https://github.com/jasvindersingh01/voltify",
 
     tech: [
       {

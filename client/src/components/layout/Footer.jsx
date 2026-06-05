@@ -35,14 +35,14 @@ const Footer = () => {
   const socials = [
     {
       icon: <FaGithub />,
-      href: "https://github.com/YOUR_USERNAME",
+      href: "https://github.com/jasvindersingh01",
       hover:
         "hover:text-white hover:shadow-[0_0_30px_rgba(255,255,255,0.35)]",
     },
 
     {
       icon: <FaLinkedin />,
-      href: "https://linkedin.com/in/YOUR_PROFILE",
+      href: "https://linkedin.com/in/",
       hover:
         "hover:text-[#0A66C2] hover:shadow-[0_0_30px_rgba(10,102,194,0.45)]",
     },

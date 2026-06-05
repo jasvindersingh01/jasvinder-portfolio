@@ -35,7 +35,7 @@ const itemVariants = {
 const socialLinks = [
   {
     name: "GitHub",
-    href: "https://github.com/yourusername",
+    href: "https://github.com/jasvindersingh01",
     icon: FaGithub,
     hover:
       "hover:text-white hover:border-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.25)]",
@@ -43,7 +43,7 @@ const socialLinks = [
 
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://linkedin.com/in/",
     icon: FaLinkedin,
     hover:
       "hover:text-[#0A66C2] hover:border-[#0A66C2]/20 hover:shadow-[0_0_30px_rgba(10,102,194,0.35)]",
@@ -51,7 +51,7 @@ const socialLinks = [
 
   {
     name: "Email",
-    href: "mailto:yourmail@gmail.com",
+    href: "jasvindersingh0901@gmail.com",
     icon: HiOutlineMail,
     hover:
       "hover:text-red-300 hover:border-cyan-400/20 hover:shadow-[0_0_30px_rgba(34,211,238,0.35)]",
@@ -59,7 +59,7 @@ const socialLinks = [
 
   {
     name: "Call",
-    href: "tel:+919999999999",
+    href: "tel:+919057238468",
     icon: HiOutlinePhone,
     hover:
       "hover:text-green-400 hover:border-green-400/20 hover:shadow-[0_0_30px_rgba(74,222,128,0.35)]",
