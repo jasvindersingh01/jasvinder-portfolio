@@ -164,7 +164,7 @@ const Hero = () => {
             transition={{ delay: 0.7 }}
             className="mt-10 flex flex-wrap gap-5"
           >
-            {/* Primary */} 
+            {/* Primary */}
             <a
               href="#projects"
               className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 px-7 py-4 text-sm font-semibold tracking-wide text-white shadow-[0_0_40px_rgba(59,130,246,0.45)]"
@@ -185,11 +185,11 @@ const Hero = () => {
             </a>
 
             {/* Secondary */}
-        <a
-  href="/resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="
+            <a
+              href="/jasvinder-resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
     group
     rounded-2xl
     border
@@ -205,16 +205,16 @@ const Hero = () => {
     duration-300
     hover:bg-white/10
   "
->
-  <span className="flex items-center gap-2">
-    <FileText
-      size={18}
-      className="transition-transform duration-300 group-hover:scale-110"
-    />
+            >
+              <span className="flex items-center gap-2">
+                <FileText
+                  size={18}
+                  className="transition-transform duration-300 group-hover:scale-110"
+                />
 
-    View Resume
-  </span>
-</a>
+                View Resume
+              </span>
+            </a>
           </motion.div>
 
           {/* Social Icons */}
@@ -236,7 +236,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/jasvindersingh01"
               target="_blank"
               rel="noreferrer"
               className="group relative flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-2xl text-white backdrop-blur-xl transition duration-300 hover:scale-110 hover:border-cyan-400/30"
@@ -329,6 +329,8 @@ const Hero = () => {
             <img
               src={profile}
               alt="Jasvinder Singh"
+              loading="eager"
+              decoding="async"
               className="
         h-[420px]
         w-[420px]

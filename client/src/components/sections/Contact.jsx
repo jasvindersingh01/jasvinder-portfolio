@@ -44,7 +44,7 @@ const socialLinks = [
 
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/",
+    href: "https://www.linkedin.com/in/jasvindersingh01",
     icon: FaLinkedin,
     hover:
       "hover:text-[#0A66C2] hover:border-[#0A66C2]/20 hover:shadow-[0_0_30px_rgba(10,102,194,0.35)]",

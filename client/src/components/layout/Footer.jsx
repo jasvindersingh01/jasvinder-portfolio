@@ -42,7 +42,7 @@ const Footer = () => {
 
     {
       icon: <FaLinkedin />,
-      href: "https://linkedin.com/in/",
+      href: "https://www.linkedin.com/in/jasvindersingh01",
       hover:
         "hover:text-[#0A66C2] hover:shadow-[0_0_30px_rgba(10,102,194,0.45)]",
     },
